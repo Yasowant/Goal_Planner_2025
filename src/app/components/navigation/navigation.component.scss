@@ -1,0 +1,37 @@
+@use '../../../styles' as *;
+
+.navbar {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+.navbar-brand {
+  color: var(--text-color)
+}
+
+.contribute-button{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .contribute-text {
+    display: none;
+  }
+
+  .nav-item {
+    margin-left: 0 !important;
+  }
+}

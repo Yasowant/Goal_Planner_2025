@@ -1,0 +1,33 @@
+<div class="timeline">
+  <div class="timeline-header">
+    <h2>Goals Timeline</h2>
+    <!-- <div class="dropdown">
+      <a class="btn" [class.disabled]="!(dataService.goalsList().length > 0)" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-download download-icon"></i>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+        <a class="dropdown-item" href="#" (click)="downloadGoals('png')">png</a>
+        <a class="dropdown-item" href="#" (click)="downloadGoals('pdf')">pdf</a>
+      </div>
+    </div> -->
+  </div>
+  <div class="timeline-container">
+    @if(dataService.goalsList().length > 0){
+    @for(goal of dataService.goalsList(); track $index){
+    <div class="card timeline-box">
+      <div class="card-body">
+        <button class="close-btn" (click)="dataService.removeGoalByIndex($index)">&times;</button>
+        <h3 class="card-title">{{ goal.goalTitle }}</h3>
+        <p class="card-text">{{ goal.goalText }}</p>
+        <span class="timeline-date">{{ goal.goalMonth }}</span>
+      </div>
+    </div>
+    }
+  }
+  @else {
+    <div class="no-goals">
+      <p>No goals added yet. Please add your first goal!</p>
+    </div>
+  }
+  </div>
+</div>
